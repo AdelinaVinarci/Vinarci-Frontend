@@ -1,0 +1,29 @@
+.defaultButton {
+    width: 100%;
+
+    button {
+    color: #FFF;
+    font-family: "General Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-family: "General Sans Medium";
+font-weight: 1000;
+    line-height: 20px; /* 142.857% */
+    text-transform: uppercase;
+    border: 0;
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    display: flex;
+    padding: 18px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    width: 100%;
+    border-radius: 50px;
+    background: #3D3D3D;
+    }
+}

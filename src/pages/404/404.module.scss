@@ -1,0 +1,54 @@
+.page {
+    padding: 0px 0px 0px 144px; /*PADDING FOR THE HEADER, REMOVE IF HEADER MOVES OTHER ELEMENTS WHEN ADDED TO PAGE*/
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .textWrapper {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            color: #FFF;
+            font-family: Newsreader;
+            font-size: 110px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 110px; /* 100% */
+        }
+    
+        p {
+            color: var(--White, #FFF);
+            text-align: center;
+            /* Heading 4 */
+            font-family: Newsreader;
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 40px; /* 125% */
+        }
+    }
+
+    .button {
+        position: absolute;
+        bottom: 50px;
+        width: calc(100% - 288px);
+    }
+}
+
+@media screen and (max-width:811px) {
+    .page {
+        padding: 0px 15px !important;
+    }
+
+    .button {
+        bottom: 20px !important;
+        width: calc(100% - 30px) !important;
+    }
+}

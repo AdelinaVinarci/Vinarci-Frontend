@@ -1,0 +1,104 @@
+.footer {
+  display: inline-flex;
+  padding: 40px 70px;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  align-items: center;
+  gap: 73px;
+  margin-left: 74px;
+  width: calc(100% - 74px);
+  position: relative;
+  .upperFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .linksWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 13px;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      a {
+        color: var(--White, #fff);
+        font-family: "Newsreader";
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 18px; /* 90% */
+        text-decoration-line: underline;
+      }
+    }
+    .divider {
+      width: 197px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .socials {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+  .madeBy {
+    display: flex;
+    gap: 3px;
+  }
+  .copyright {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      color: var(--White, #fff);
+      font-family: "General Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 20px; /* 142.857% */
+    }
+    .madeBy {
+      p {
+        color: var(--White, #fff);
+        font-family: "General Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px; /* 142.857% */
+      }
+      a {
+        color: var(--White, #fff);
+        font-family: "General Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px;
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 100%;
+    margin-left: 0;
+    .copyright {
+      flex-direction: column;
+      gap: 20px;
+      p {
+        font-size: 12px;
+      }
+    }
+    .madeBy {
+      p,
+      a {
+        font-size: 12px !important;
+      }
+    }
+  }
+}

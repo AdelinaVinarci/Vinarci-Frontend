@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "General Sans Light";
+  src: url("./assets/fonts/GeneralSans-Light.woff2");
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("./assets/fonts/GeneralSans-Regular.woff2");
+}
+
+@font-face {
+  font-family: "General Sans Medium";
+  src: url("./assets/fonts/GeneralSans-Medium.woff2");
+}
+
+@font-face {
+  font-family: "General Sans Bold";
+  src: url("./assets/fonts/GeneralSans-Bold.woff2");
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 40px;
+  background: var(--Black, #030303);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: transparent !important;
+  background-size: 100% !important;
+  border-radius: 100% !important;
+  width: 40px !important;
+  height: 40px !important;
+
+
+}
+
+.swiper-button-next {
+  background: url("/src/assets/images/Arrow.svg") no-repeat;
+  transform: rotate(180deg);
+
+}
+
+.swiper-button-prev {
+  background: url("/src/assets/images/Arrow.svg") no-repeat;
+
+}
+
+.swiper-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 20px;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.6 !important;
+  width: 8px !important;
+  height: 8px !important;
+
+
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+  opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+}

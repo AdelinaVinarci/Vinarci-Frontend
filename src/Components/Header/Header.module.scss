@@ -1,0 +1,143 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999999;
+  height: 100vh;
+  .innerHeader {
+    position: relative;
+    z-index: 9999999;
+    display: inline-flex;
+    width: 74px;
+    height: 100%;
+    padding: 25px 15px;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+
+    svg:hover {
+      cursor: pointer;
+    }
+
+    .burgerAndInsta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: calc(
+        50% + 10px
+      ); //trial and error, I CHECKED AND IT WORKS FOR EVERY SIZE :)
+
+      .instagramLogo {
+        position: relative;
+        height: 20px;
+        width: 20px;
+
+        svg {
+          position: absolute;
+          top: 0;
+        }
+      }
+      img:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .closet {
+    position: fixed;
+    left: -800px;
+    top: 0;
+    width: 800px;
+    height: 100vh;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 70px 144px;
+  }
+  p,
+  .closetLink {
+    position: absolute;
+    color: #fff;
+    font-family: Newsreader;
+    font-size: 60px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 60px; /* 100% */
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+.closeHitBox {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.gradient {
+  pointer-events: none;
+  transition: 0.75s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 1600px;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-position: -1600px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 450px) {
+  .instagramLogo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 811px) {
+  .header {
+    height: unset !important;
+    width: 100vw;
+    background-color: #030303;
+
+    .innerHeader {
+      flex-direction: row;
+      width: 100%;
+      padding: 15px;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+      .burgerAndInsta {
+        flex-direction: row-reverse;
+        gap: 30px;
+      }
+    }
+  }
+}

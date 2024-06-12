@@ -1,0 +1,162 @@
+.dressesMain {
+  padding-left: 144px;
+  padding-top: 0px;
+  display: flex;
+  gap: 0;
+  height: 100vh;
+  align-items: flex-start;
+  overflow: hidden;
+  .content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+    height: 100%;
+    padding-top: 70px;
+    justify-content: space-between;
+
+    h1 {
+      color: var(--White, #fff);
+
+      /* Heading 1 */
+      font-family: Newsreader;
+      font-size: 60px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 68px; /* 113.333% */
+    }
+    .contentParag {
+      color: var(--White, #fff);
+
+      /* Paragraph */
+      font-family: "General Sans Light";
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 24px; /* 160% */
+      margin-top: 10px;
+      margin-bottom: 30px;
+      width: 322px;
+    }
+    a {
+      color: var(--White, #fff);
+      font-family: "General Sans Medium";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px; /* 125% */
+      text-transform: uppercase;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      text-decoration: none;
+    }
+    .scroll {
+      color: var(--White, #fff);
+      font-family: "General Sans Medium";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px; /* 142.857% */
+      text-transform: uppercase;
+      display: flex;
+
+      gap: 10px;
+    }
+  }
+
+  .slider {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 0;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* For Chrome, Safari, and Opera */
+    }
+    img {
+      width: 517px;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+  .wrapper {
+    width: 517px;
+    height: 100%;
+    position: relative;
+    .overlay {
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+      width: 517px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.4s;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+      height: 100%;
+      padding-bottom: 60px;
+      &:hover{
+        opacity: 1;
+      }
+      .dressTitle {
+        color: #fff;
+        font-family: Newsreader;
+        font-size: 46px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 40px; /* 86.957% */
+      }
+      .contentWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        p {
+          color: #fff;
+          font-family: "General Sans Medium";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px; /* 133.333% */
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 338px) {
+  .contentParag {
+    width: calc(100% - 15px) !important;
+  }
+}
+
+@media screen and (max-width: 811px) {
+  .dressesMain {
+    padding: 0;
+    flex-direction: column;
+
+    .content {
+      padding: 0;
+      margin-top: 100px;
+      margin-left: 15px;
+      height: 339px;
+      width: 100%;
+
+      .scroll {
+        display: none;
+      }
+
+      a {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

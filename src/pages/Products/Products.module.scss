@@ -1,0 +1,213 @@
+.productsWrapper {
+  padding-left: 144px;
+  padding-top: 120px;
+  padding-bottom: 80px;
+
+  .intro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 61px;
+    margin-bottom: 40px;
+    h1 {
+      color: var(--White, #fff);
+
+      /* Heading 1 */
+      font-family: Newsreader;
+      font-size: 60px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 68px; /* 113.333% */
+    }
+    .cats {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      p {
+        cursor: pointer;
+        color: var(--White, #fff);
+        display: flex;
+        padding: 5px 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        /* Accent */
+        font-family: "General Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 16px; /* 114.286% */
+        text-transform: uppercase;
+        border-radius: 41px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .active {
+        border-radius: 41px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+      }
+    }
+  }
+  .products {
+    display: flex;
+    align-items: flex-start;
+    gap: 43px;
+    padding-right: 61px;
+    flex-wrap: wrap;
+    .product {
+      text-decoration: none;
+      width: calc(33% - 24px);
+      position: relative;
+      .innerCats {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        top: 11px;
+        left: 13px;
+        .innerCat {
+          color: var(--Black, #030303);
+          font-family: "General Sans Medium";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 18px; /* 150% */
+          display: flex;
+          padding: 2px 10px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          text-transform: uppercase;
+          border-radius: 41px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: var(--White, #fff);
+        }
+      }
+      img {
+        width: 100%;
+        aspect-ratio: 4/6;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+      .title {
+        color: var(--White, #fff);
+
+        /* Heading 5 */
+        font-family: Newsreader;
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 30px; /* 136.364% */
+        margin-bottom: 5px;
+      }
+      .attributes {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        .attribute {
+          color: var(--White, #fff);
+          font-family: "General Sans Medium";
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 18px; /* 138.462% */
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+.loadMoreButton {
+  margin-top: 40px;
+
+  display: flex;
+  width: calc(100% - 61px);
+  padding: 20px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--White, #fff);
+  font-family: "General Sans Medium";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 112.5% */
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media screen and (max-width: 522px) {
+  .productsWrapper {
+    padding: 120px 15px 10px 15px !important;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: flex-start !important;
+
+    h1 {
+      width: 100% !important;
+    }
+  }
+
+  .products {
+    margin-top: 60px;
+    gap: 60px !important;
+    .product {
+      width: 100% !important;
+    }
+  }
+  .productsWrapper {
+    h1 {
+      font-size: 48px !important;
+      margin-bottom: 10px;
+    }
+  }
+
+  .cats {
+    justify-content: flex-start !important;
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 811px) {
+  .intro {
+    padding-right: 0 !important;
+    h1 {
+      width: 40%;
+    }
+  }
+
+  .cats {
+    justify-content: flex-end;
+    width: 60%;
+  }
+
+  .productsWrapper {
+    padding: 180px 30px 10px 30px;
+
+    .products {
+      padding-right: 0;
+
+      .innerCats {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .product {
+    width: calc(32.5% - 24px) !important;
+  }
+  .loadMoreButton {
+    width: 100%;
+    padding: 16px 10px;
+    font-size: 12px;
+    line-height: 14px; /* 116.667% */
+  }
+}
