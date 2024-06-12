@@ -8,52 +8,40 @@ const DressesMain = () => {
   const [products, setProducts] = useState();
 
   useEffect(() => {
+    const slider = sliderRef?.current;
+    const slideItems = slider.children;
+    const slideCount = slideItems.length;
+    const slideWidth = slideItems[0]?.clientWidth;
+
+    // Clone the first and last few items to create an infinite loop effect
+    for (let i = 0; i < slideCount; i++) {
+      slider.appendChild(slideItems[i].cloneNode(true));
+      slider.insertBefore(slideItems[slideCount - 1 - i].cloneNode(true), slideItems[0]);
+    }
+
     const handleWheel = (event) => {
-      const slider = sliderRef.current;
-      if (slider) {
-        event.preventDefault();
-        const scrollAmount = event.deltaY * 0.5;
-        slider.scrollLeft -= scrollAmount;
+      event.preventDefault(); // Prevent normal scrolling
+      const scrollAmount = event.deltaY * 0.5; // Make scrolling slower
+      slider.scrollLeft -= scrollAmount;
 
-        const slideItems = Array.from(slider.children);
-        const slideWidth = slideItems[0]?.clientWidth;
-        const slideCount = slideItems.length / 3; // Since we have cloned items
-        const totalSlides = slideCount * 3;
-        const initialScrollPosition = slideWidth * slideCount;
-
-        if (slider.scrollLeft >= slideWidth * (totalSlides - slideCount)) {
-          slider.scrollLeft = initialScrollPosition;
-        } else if (slider.scrollLeft <= 0) {
-          slider.scrollLeft = slideWidth * (slideCount - 1);
-        }
+      // Reset scroll position when reaching the end or the beginning
+      if (slider.scrollLeft >= slideWidth * slideCount) {
+        slider.scrollLeft = slideWidth;
+      } else if (slider.scrollLeft <= 0) {
+        slider.scrollLeft = slideWidth * (slideCount - 1);
       }
     };
 
-    const slider = sliderRef.current;
-    if (slider) {
-      const slideItems = Array.from(slider.children);
-      const slideCount = slideItems.length;
-      const slideWidth = slideItems[0]?.clientWidth;
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
-      slideItems.forEach((item) => {
-        const clone = item.cloneNode(true);
-        slider.appendChild(clone);
-      });
-      slideItems.reverse().forEach((item) => {
-        const clone = item.cloneNode(true);
-        slider.insertBefore(clone, slider.firstChild);
-      });
+    // Initial scroll position
+    slider.scrollLeft = slideWidth * slideCount;
 
-      const initialScrollPosition = slideWidth * slideCount;
-      slider.scrollLeft = initialScrollPosition;
-
-      slider.addEventListener("wheel", handleWheel, { passive: false });
-
-      return () => {
-        slider.removeEventListener("wheel", handleWheel);
-      };
-    }
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
   }, []);
+
 
   const fetchAllProducts = async () => {
     try {
