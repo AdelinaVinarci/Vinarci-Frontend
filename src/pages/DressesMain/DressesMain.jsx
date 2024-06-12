@@ -16,7 +16,10 @@ const DressesMain = () => {
     // Clone the first and last few items to create an infinite loop effect
     for (let i = 0; i < slideCount; i++) {
       slider.appendChild(slideItems[i].cloneNode(true));
-      slider.insertBefore(slideItems[slideCount - 1 - i].cloneNode(true), slideItems[0]);
+      slider.insertBefore(
+        slideItems[slideCount - 1 - i].cloneNode(true),
+        slideItems[0]
+      );
     }
 
     const handleWheel = (event) => {
@@ -41,7 +44,6 @@ const DressesMain = () => {
       window.removeEventListener("wheel", handleWheel);
     };
   }, []);
-
 
   const fetchAllProducts = async () => {
     try {

@@ -81,7 +81,9 @@ const Products = () => {
             >
               <img
                 src={
-                  product?.dressImages ? product?.dressImages[0]?.url : dress
+                  product?.thumbnailImage?.url
+                    ? product?.thumbnailImage?.url
+                    : dress
                 }
                 alt=""
               />
