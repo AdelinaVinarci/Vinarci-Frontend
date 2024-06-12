@@ -2,12 +2,35 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./DressesMain.module.scss";
 import { Link } from "react-router-dom";
 import { fetchProductsMain } from "../../services";
+
 const DressesMain = () => {
   const sliderRef = useRef(null);
   const [products, setProducts] = useState();
+
   useEffect(() => {
-    setTimeout(() => {
+    const handleWheel = (event) => {
       const slider = sliderRef.current;
+      if (slider) {
+        event.preventDefault();
+        const scrollAmount = event.deltaY * 0.5;
+        slider.scrollLeft -= scrollAmount;
+
+        const slideItems = Array.from(slider.children);
+        const slideWidth = slideItems[0]?.clientWidth;
+        const slideCount = slideItems.length / 3; // Since we have cloned items
+        const totalSlides = slideCount * 3;
+        const initialScrollPosition = slideWidth * slideCount;
+
+        if (slider.scrollLeft >= slideWidth * (totalSlides - slideCount)) {
+          slider.scrollLeft = initialScrollPosition;
+        } else if (slider.scrollLeft <= 0) {
+          slider.scrollLeft = slideWidth * (slideCount - 1);
+        }
+      }
+    };
+
+    const slider = sliderRef.current;
+    if (slider) {
       const slideItems = Array.from(slider.children);
       const slideCount = slideItems.length;
       const slideWidth = slideItems[0]?.clientWidth;
@@ -21,29 +44,15 @@ const DressesMain = () => {
         slider.insertBefore(clone, slider.firstChild);
       });
 
-      const totalSlides = slideCount * 3;
       const initialScrollPosition = slideWidth * slideCount;
-
       slider.scrollLeft = initialScrollPosition;
 
-      const handleWheel = (event) => {
-        event.preventDefault();
-        const scrollAmount = event.deltaY * 0.5;
-        slider.scrollLeft -= scrollAmount;
-
-        if (slider.scrollLeft >= slideWidth * (totalSlides - slideCount)) {
-          slider.scrollLeft = initialScrollPosition;
-        } else if (slider.scrollLeft <= 0) {
-          slider.scrollLeft = slideWidth * (slideCount - 1);
-        }
-      };
-
-      window.addEventListener("wheel", handleWheel, { passive: false });
+      slider.addEventListener("wheel", handleWheel, { passive: false });
 
       return () => {
-        window.removeEventListener("wheel", handleWheel);
+        slider.removeEventListener("wheel", handleWheel);
       };
-    }, 400);
+    }
   }, []);
 
   const fetchAllProducts = async () => {
