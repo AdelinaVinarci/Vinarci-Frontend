@@ -102,7 +102,7 @@
       gap: 20px;
       height: 100%;
       padding-bottom: 60px;
-      &:hover{
+      &:hover {
         opacity: 1;
       }
       .dressTitle {
@@ -131,18 +131,11 @@
     }
   }
 }
-
-@media screen and (max-width: 338px) {
-  .contentParag {
-    width: calc(100% - 15px) !important;
-  }
-}
-
 @media screen and (max-width: 811px) {
   .dressesMain {
     padding: 0;
     flex-direction: column;
-
+height: 100%;
     .content {
       padding: 0;
       margin-top: 100px;
@@ -158,5 +151,14 @@
         margin-bottom: 30px;
       }
     }
+    .slider{
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 338px) {
+  .contentParag {
+    width: calc(100% - 15px) !important;
   }
 }
