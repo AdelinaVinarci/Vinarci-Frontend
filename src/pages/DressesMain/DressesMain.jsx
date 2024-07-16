@@ -63,10 +63,7 @@ const DressesMain = () => {
       <div className={styles.content}>
         <div>
           <h1>Fustanet</h1>
-          <p className={styles.contentParag}>
-            Lorem ipsum dolor sit amet consectetur. Et molestie sed ornare
-            fermentum nunc ipsum dolor sit
-          </p>
+          <p className={styles.contentParag}>Zbuloni koleksionin</p>
           <p className={styles.scroll}>
             SCROLL Down
             <svg
