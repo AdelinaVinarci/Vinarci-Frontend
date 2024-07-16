@@ -80,7 +80,7 @@ const Contact = () => {
         );
 
         if (response.status === 200 && responseMail.status === 200) {
-          console.log("check passed, goto next page");
+
           window.open("./thank-you", "_self");
         } else {
           console.error("Error submitting form");

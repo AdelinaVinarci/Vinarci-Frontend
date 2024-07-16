@@ -11,36 +11,29 @@ const Makeup = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("Fetching data...");
       const data = await fetchMakeUps();
-      console.log("Data fetched:", data);
+
       setMakeUps(data);
     };
 
     fetchData();
 
     const fetchDataLogos = async () => {
-      console.log("Fetching data...");
       const data = await fetchLogos();
-      console.log("Data fetched:", data);
+
       setLogos(data);
     };
 
     fetchDataLogos();
 
     const fetchDataServices = async () => {
-      console.log("Fetching data...");
       const data = await fetchServices();
-      console.log("Data fetched:", data);
+
       setServices(data);
     };
 
     fetchDataServices();
   }, []);
-
-  console.log("makeUps:", makeUps);
-  console.log("Logos:", Logos);
-  console.log("Services:", Services);
 
   return (
     <div>
@@ -63,7 +56,7 @@ const Makeup = () => {
                   r="12.5"
                   transform="rotate(90 12.5 12.5)"
                   fill="white"
-                  fill-opacity="0.2"
+                  fillOpacity="0.2"
                 />
               </g>
               <path
@@ -78,9 +71,9 @@ const Makeup = () => {
                   width="39"
                   height="39"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="3.5" />
                   <feComposite
                     in2="SourceAlpha"
@@ -149,7 +142,9 @@ const Makeup = () => {
             <div>No makeups found</div>
           )}
         </div>
-        <p className={styles.orari}>Working hours: 08:00 - 19:00</p>
+        <div className={styles.orari}>
+          <p> Working hours: 08:00 - 19:00</p>
+        </div>
       </div>
       <Footer />
     </div>

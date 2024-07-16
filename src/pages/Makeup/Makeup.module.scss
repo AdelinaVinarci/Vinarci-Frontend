@@ -108,20 +108,33 @@
     }
   }
   .orari {
-    color: var(--White, #fff);
-    font-family: "General Sans Medium";
-    font-size: 16px;
-    font-style: normal;
+  
     margin-left: -69px;
-    font-weight: 500;
-    line-height: 18px; /* 112.5% */
-    text-transform: uppercase;
+   
     margin-top: 120px;
     padding-top: 25px;
     width: calc(100% + 69px);
     text-align: center;
     margin-bottom: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+display: flex;
+justify-content: center;align-items: center;
+    p{
+      display: flex;
+      width: calc(100% - 69px);
+padding: 20px 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;border-radius: 50px;
+background: rgba(255, 255, 255, 0.10);
+color: var(--White, #FFF);
+font-family: "General Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 18px; /* 112.5% */
+text-transform: uppercase;
+    }
   }
 }
 

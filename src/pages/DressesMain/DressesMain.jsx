@@ -25,7 +25,7 @@ const DressesMain = () => {
     const handleWheel = (event) => {
       event.preventDefault(); // Prevent normal scrolling
       const scrollAmount = event.deltaY * 0.5; // Make scrolling slower
-      slider.scrollLeft -= scrollAmount;
+      slider.scrollLeft += scrollAmount;
 
       // Reset scroll position when reaching the end or the beginning
       if (slider.scrollLeft >= slideWidth * slideCount) {
@@ -84,7 +84,7 @@ const DressesMain = () => {
                   r="12.5"
                   transform="rotate(90 12.5 12.5)"
                   fill="white"
-                  fill-opacity="0.2"
+                  fillOpacity="0.2"
                 />
               </g>
               <path
@@ -99,9 +99,9 @@ const DressesMain = () => {
                   width="39"
                   height="39"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feGaussianBlur in="BackgroundImageFix" stdDeviation="3.5" />
                   <feComposite
                     in2="SourceAlpha"
@@ -149,9 +149,9 @@ const DressesMain = () => {
                 width="104"
                 height="104"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feGaussianBlur in="BackgroundImageFix" stdDeviation="3.5" />
                 <feComposite
                   in2="SourceAlpha"
